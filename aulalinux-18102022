@@ -1,0 +1,27 @@
+#01_MintUpdate
+    a) Atualizar  -->  apt  -->sources.list
+	b) Repositorio  -->apt  -->sources.list
+	(=Diretorio)
+	c)Pesquisar:o que é PP's
+	d) Instalar Atualização --> apt
+//////////////////////////////////////////////////////////////////////////////			
+#02_ Instalação dos convidados do Virtual Box
+	a) dispositivos
+	                inserir imagem do CD dos convidados
+  //////////////////////////////////////////////////////////////////////////////		
+#03_ Atualizar via linha de comando 
+    PESQUISAR: O QUE É BASH
+	           O QUE É SHELL
+			   O QUE É APT-GET
+			   O QUE É SUDU??????
+			
+	//////////////////////////////////////////////////////////////////////////////		
+		Sudo apt update  -->MintUpdate atualizar
+    comando: sudo apt update
+              sudo apt upgrade
+              sudo apt full upgrade
+              sudo apt dist-upgrade 
+              sudo apt autoremove
+              sudo apt autoclean
+              sudo apt clean
+              history
