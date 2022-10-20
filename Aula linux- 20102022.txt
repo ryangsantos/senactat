@@ -1,0 +1,9 @@
+#04_instalar software (linux)
+		    Microsoft - .EXE ou MSI
+			-----------------------
+			Linux Mint: 15 - .DEB
+			Opera Linux
+			Pesquisa: gdeb
+			central de aplicativos
+			terminal - apt
+			sudo apt install git vim psensor
