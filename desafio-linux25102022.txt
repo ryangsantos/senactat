@@ -17,7 +17,7 @@
 
 #03_ Instalação dos Pacote Office
 	_a - WPS Office for Linux (Recomendo via Gdebi)--OK
-	_c - FreeOffice for Linux (Recomendo via Gdebi)
+	_c - FreeOffice for Linux (Recomendo via Gdebi)--OK
 	_d - OnlyOffice Desktop for Linux (Recomendo AppImagem)--OK
 	_e - Microsoft Teams for Linux (Recomendo via Gdebi)--OK
 	_f - Skype for Linux (Recomendo via Gdebi)--OK
