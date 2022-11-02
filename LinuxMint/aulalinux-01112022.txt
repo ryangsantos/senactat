@@ -1,0 +1,12 @@
+Github:-diretório=repositório
+
+Github:-Microsoft=GNU/Linux Open source
+							(case sensitive)
+              
+	Pesquisar:Markedown - extennsão * .md
+					      README.md
+                
+  Pesquisar: Comando :git - editor: VSCode						  
+									   (Visual studio code)
+                     
+clonar									   
