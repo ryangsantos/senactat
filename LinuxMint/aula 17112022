@@ -1,0 +1,14 @@
+# comando de mover (renomear)
+mv ORIGEM DESTINO 
+
+#comando de copiar 
+cp -v
+
+# comando de imprimir mensagem na tela 
+echo SENAC Tatuapé > SENAC.txt
+
+# comando para listar o conteúo do arqivo 
+cat -n 
+
+#comando para listar o conteúo do arqivo 
+#mais eu posso escolher a linha 
