@@ -1,0 +1,135 @@
+Objetivo da atividade de hoje 14/03/2023.
+
+Primeira etapa.: Iniciar o Cisco Packet Tracer
+				 (se autenticar com a sua conta)
+				 
+Segunda etapa..: Material da aula está na Rede
+				 T:\Publica\!!!!RobsonVaamonde\InfraestruturaDeRede
+
+Terceira etapa.: Quem faltou na terceira aula, copiar o meu cenário: 
+				 ComandosCisco\00-Projeto-Cisco.pkt para o seu computador
+
+Quarta etapa...: Se autenticar com a sua Conta no Github
+				 (recomendo para manter o seu material atualizado e organizado)
+				 
+Quinta etapa...: Iniciar o Visual Studio Code
+				 (comandos básicos do Cisco vou mostrar nele)
+				 
+Sexta etapa....: CONTINUAR O MATERIAL InfraestruturaDeRedes-02.PDF
+-----------------------------------------------------------------------------------------------
+AULA 05 de infraestrutura de Redes
+
+Placa de Redes (NIC):
+10/100/1000: Largura de Banda
+T: 	Par traçado
+TX: Par traçado blindado
+F: Fibra optica
+W: Rede sem Fio
+LX: Fibra optica multimodo ou monomodo
+
+Porta de rede:
+Onde havrá a conexao de qualquer equipamento ao switch/hub/roteador sem fio, funciona sem necessitar de configuração, fazendo isso automaticamente
+
+Interface de Rede:
+Tendo em roteador, tem e mesma função da Porta, porem necessita de uma configuração, precisando de Endereço IP, gerando o roteamento da internet
+
+Componentes de Rede:
+-HUB
+-REPETIDOR
+-SPLITTER
+-ACESS POINT
+-SWITCH (CAMADA 2 e 3 do modelo OZI)
+-BRIDGE
+-SWITCH MULTILAYER
+-ROTEADOR
+-FIREWALL
+-SERVER
+-DESKTOP
+-NOTEBOOK
+-IMPRESSORA
+-TABLET
+-CELULAR
+
+MAC Address: O endereço de controle ao meio de um dispositivo, nome fisico que não pode ser mudado, tendo um MAC em cada porta do switch
+3A-34-52-C4-69-B8
+*Os 3 primeiros pares são um codigo unico de cada endereço, ja os 3 ultimos são pessoais de cada endereço para o controle da interface*
+
+Tabela CAM: Processo de aprendizagem do switch, fazendo o gerenciamento do switch
+
+IPv4: IP Decimal, endereço que pode ser mudado, dividido em 32 bits
+
+IPv6: IP Hexadecimal, podendo ser alterado, dividido em 128 bits
+
+Da placa de rede ate o switch, eles usam a comunicação Unicast, ou seja, de um para um, FULL-DUPLEX
+
+Dentro do PowerShell
+getmac: Mostrar o Endereço MAC
+Ipconfig: Mostrar as configurações de IP
+Ipconfig /all: Mostrar o ipconfig com mais informações
+dentro dele temos o Endereço Fisico
+ARP -a:
+
+Protocolo ARP: Protocolo que mapeia o endereço MAC
+
+Dominio de Colisão e Dominio de Broadcast
+
+Broadcast: telecomunicação de informações de todos os equipamento simultaneamente
+HUB: cada HUB tem seu dominio de colisão e um dominio de broadcast, gerando uma certa lentidao na rede, ja que duas informações mandadas ao mesmo tempo, pode causar uma "colisão"
+Switch: ou microseguimentação, cada porta tem seu dominio de Brodcast individual, deixando de existir graças ao multicast, deixando mais rapido
+Roteador: quebra o dominio de Broadcast, 
+
+Detecção de colisão: ira localizar as areas de possiveis colisões e gerar uma resolução
+
+Abrimos o VSCode
+E vamos instalar duas extensões:
+-Cisco IOS Syntax
+-Cisco Config Highlight
+
+! = Comentario no Cisco IOS
+
+Comando utilizado para a configuração:
+
+!Comentarios no Cisco IOS
+
+!Configuração do Switch Cisco
+
+!Entrar no modo de privilegio
+enable
+    !Data e Hora
+    clock set 20:45:00 14 March 2023
+    !Entrar na Cinfiguração do terminal
+    configure terminal
+        !Nome do host
+        hostname sw-l2-2960-1
+        !ciar uma senha encriptada
+        service password-encryption
+        !Encrementar a data/hora
+        service timestamps log datetime msec
+        !Sem dominio de IP
+        no ip domain-lookup
+        !Aviso a ser mostrado
+        banner motd #AVISO: acesso autorizado somente para funcionarios#
+        !habilitar a senha
+        enable secret 123@senac
+        !Criação de usuarios, privilegios e senhas
+        username senac secret 123@senac
+        username tatuape password 123@senac
+        username admin privilege 15 secret 123@senac
+        !entrar no console 0
+        line console 0  
+            !permitir o login dos usuarios locais
+            login local
+            !Colocando uma senha 
+            password 123@senac
+            !Logs tenham sincronismo
+            logging synchronous
+            !Executar a saido com base em um tempo (5min e 30sec)
+            exec-timeout 5 30
+            !Sair de todos os niveis
+            end
+    !Salvar
+    copy running-config startup-config
+    !confirmação dos comandos
+    show running-config
+    !confirmação para ir para o proximo
+    exit
