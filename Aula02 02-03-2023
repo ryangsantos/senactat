@@ -1,0 +1,45 @@
+Aula 2 de Redes (02/03/2023)
+
+Dentro das topologias são utilizadas fisicamente de LAN/WAN sendo elas:
+-Ring (um computador por vez poderia mandar a informação)
+-Mesh
+-Line (conexao por cabo)*MORTA*
+-Bus (cabo "vampiro" conectado ao cabo principal, conectando a rede)*MORTA*
+-Star (onde a um ponto central, sendo todos os computadores conectados ao mesmo)
+-Tree (possibilita a ramificação, ou seja, conectar em um maior numero de computadores mesmo com o numero de portas inferiores)
+
+Metodo de Transmissão: A uma transmissã de bits sequencialmente, um bit de cada vez (010100110)
+
+
+Metodos de Comunicação:
+-Sincronico
+Ambos os lados devem estar disponivel ao mesmo tempo
+
+-Assíncrono
+Quando um dos lados liga e deixa uma mensagem de voz, assim o receptor podera ouvi-la no momento que quiser
+
+Tipos de transmissão:
+Simplex: o simples, via unica, apenas um usuario recebe e um usuario envia (TV e Radio)
+Half-duplex: um usuario envia, e o receptor tem que esperar a informaçaão chegar para conseguir enviar algo (Walktalk)
+Full-duplex: Ambos os usuarios podem mandar e receber ao mesmo tempo (Computador, Celular)
+
+Redes de computador sempre serão síncrona e full-duplex
+
+Comunicação das Mensagens em Rede de Computadores
+Segmentação: divisão da comunicação em partes
+Multiplexação: Juntar varias informação e mandar para um destino e na chegada, elas são desmutiplexada, dividindo elas para seus respectivos destinos
+
+-Unicast: manda a informação para um receptor especifico "origem e destino"
+-Multicast: Onde a origem escolhe o/os receptores para enviar a informação
+-Broadcast: metodo onde uma origem "fala" e todos os conectados "escutam"
+-Anycast: Escolhe o mais proximo do recurso
+
+Comunicação Baseada em circuito: Onde há um circuito que, caso haja uma interferencia, a comunicação e cortada na hora (telefonia)
+Comunicação Baseada em Pacote: Onde há um caminho, porem caso hája interferencia, automaticamente te transporta para outro caminho, não cortando a comunicação
+
+Arquitetura com Tolerancia a Falha: Caso haja uma falha em algum dispositivo, a conexão mostra um caminho alternativo
+Arquitetura com Escalabilidade: um usuario recente pode entrar na rede de outro usuario mais antigo sem afetar o desempenho
+Arquitetura com Qualidade de Serviço: Controlado pelo roteador, sendo levado em conta a prioridade e importancia da informação
+Arquitetura com Segurança Fisica e Logica: Protege a rede de possiveis ataques
+Arquitetura Sem convergencia: Varias redes diferentes para varias tecnologias diferentes
+Arquitetura Com Convergencia: Unica rede convergida para uma unica tecnologia de transmissão
