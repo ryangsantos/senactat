@@ -1,0 +1,58 @@
+Primeira aula de redes (28/02/2023)
+Primeira etapa é Iniciar o Cisco Packet Tracer
+A rede serve para que conseguimos fazer tudo que precisamos, trabalho, jogos, filmes, entre outros
+Acronimo: Junçao de varias palavras em uma só
+Iremos aprender a documentar, desenhar e organizar a rede
+Tipos de Rede:
+- Redes domesticas pequenas: conecta alguns computadores da residencia entre si
+- Redes pequenas de escritorio (SOHO): Interliga os computadores tanto residencial quanto remoto para compartilhamento de recursos
+- Redes medias e grande: Usada em corporações e escolas, tendo mais de 100 computadores interligados simultaneamente 
+- Rede no mundo interiro: Internet que conecta mais de milhões de computadores mundialmente
+
+Configuração do Cisco
+Desabilitar:
+- Options
+- Preferences
+- Desabilitar "Show Device Model Labels" e "Show Device Name Labels"
+
+Habilitar:
+- Options
+- Preferences
+- Show/Hide
+- Habilitar "Show Wireless Boundary"
+
+Visão "Logical":
+Desenhar o jeito que quer o seu servidor
+
+Visão "Physical":
+FAzer um diagrama que mostrara como realmente funcionaria seu servidor utilizanda da "Topologia"
+
+Rede cliente servidor:
+- Uso de software gerencia e controla as inforações que funciona em varias maquinas simultaneamente
+
+Rede servidor de trabalho:
+- Geralmente classificada como host e destino final, porem não recomendado para uma sede com mais de 10 computadores
+
+Todos os dispositivos finais são computadores, televisão, impressora, entre outros, ou seja, aqueles que vc consegue configurar de qualquer jeito
+
+Rede autonoma: uma rede que vem originalmente com qualquer computador (Localhost) que esteja isolado de qualquer outros
+NUNCA conectar na porta "Console"
+Trangulo verde: esta correto e ligado no local certo
+Triangulo vermelho: esta errado ou desativado
+Bolinha laranja: analisa de onde vem a conexão, liberando ou não a passagem
+A diferença entre a FastEthernet (Amarela) e a GigabitEthernet (Laranja), é que a giga e mais rapida do que a fast
+
+Dispositivos finais: Tudo que seja ligavel e que consiga tocar e configurar
+Ativos de rede (Dispositivo de Meio): roteador, switch, entre outros (aqueles que ligam na tomada ou que emitem um pulso de energia eletrica)
+Passivo de rede (Meio Fisico): cabo de rede e rede sem fio
+
+Lan: VLAN (consegue mexer), rede de area local, dentro de uma rede no dentro do estabelecimento
+Wan: Tem uma rede propria geralmente da operadora onde não e possivel mexe-la
+
+TIPO DE INTERNET:
+Intranet: tudo construido dentro da rede local privatizada (Informaçoes pessoais dentro do site)
+Extranet: Acesso seguro a inforações de diferentes organizações, necessitando o acesso aos dados da intranet da empresa (Logo apos fazer o login ou cadastro no site)
+Internet: Rede mundialmente interconectada, afim de trocar informação por meio de padrões comuns (pagina do website)	
+
+Caso funcione no Cisco, funciona na vida real
+Topologia fisica não depende da topologia logica, mas a logica depende da física
