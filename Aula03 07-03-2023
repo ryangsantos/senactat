@@ -1,0 +1,52 @@
+Objetivo da atividade de hoje 02/03/2023.
+
+Primeira etapa.: Iniciar o Cisco Packet Tracer
+				 (se autenticar com a sua conta)
+				 
+Segunda etapa..: Material da aula está na Rede
+				 T:\Publica\!!!!RobsonVaamonde\InfraestruturaDeRede
+
+Terceira etapa.: Quem faltou na primeira aula, copiar o meu cenário: 
+				 Aula-01-28-02-2023 para o seu computador
+
+Quarta etapa...: Se autenticar com a sua Conta no Github
+				 (recomendo para manter o seu material atualizado e organizado)
+				 
+Quinta etapa...: Iniciar o Visual Studio Code
+				 (comandos básicos do Cisco vou mostrar nele)
+				 
+Sexta etapa....: FINALIZAR O CONTEÚDO DA AULA ANTERIOR E COMEÇAR A NOVO
+-----------------------------------------------------------------------------------
+
+Aula 3
+
+Na comunicação é definida entre Origem e Destino
+A rede sempre dará prioridade para o UNICAST (rede um para um), e tambem o Full-duplex ja que sempre terá 2 caminhos, enviar e receber
+Na Origem os arquivos são selecionados de coma para baixo, ja no destino, será de baixo para cima
+
+Modeli OSI: composto por camadas, um modelo de referencia utilizado para construir cabos, maquinas de rede (mais aprofundado na aula de Protocolos)
+CAMADAS:
+1. Fisica = Tudo que e passivo de rede, cabo, placa de rede, Molden
+2. Link de dados = Sai da frequencia, convertendo em Binario ja dentro da placa de rede, dentro tambem do switch
+3. Rede = Onde se encontra o roteador, utilizando uma "Inteligencia", possibilitando a conexão de redes 
+4. Transporte = Responsavel pelo TCP e UDP, uma camada de transporte
+5. Sessão = Controlar os "Horarios", iniciar ou finalizar a sessão
+6. Apresentação = Pega as informações, agrupa-las, assegura-las, e envia-las, alem de traduzir caso seja necessario
+7. Aplicação = onde o destino tera acesso a informação
+
+TCP/IP revolucionou o Modeli OSI, juntando algumas das camada da OSI, facilitando a transferencia de dados
+Onde DATA LINK e NETWORK se tornam uma so e APLICAÇÃO, APRESENTAÇÃO e SESSÃO em uma so
+
+O meio A ira fazer a APLICAÇÃO, depois o TRANSPORTE, em seguida vai para a INTERNET e por fim para a Rede
+Atraves do meio fisico, o meio B ira receber a informação pela REDE, vinda da INTERNET, segmentada pelo TRANSPORTE e chegando atraves da APLICAÇÃO
+
+CABOS DE REDES:
+Classificados por:
+Cat5e, Cat6 (USADO PARA TODOS), Cat6a(GRANDES ESTRUTURAS), Cat7 (GRANDES ESTRUTURAS), entre outros
+Cat = Categoria
+e = Enhanced (Melhorado)
+a = Augmented (Aumentado)
+
+*Tudo em rede e minusculo ou maiusculo*
+
+Fast ethernet com uma velocidade de ate 100mb, e giga vai de 1000mb 
