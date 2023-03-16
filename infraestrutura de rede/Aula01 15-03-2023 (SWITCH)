@@ -1,0 +1,78 @@
+!Entrar no modo administrador
+Switch> enable
+Switch#
+
+...
+!Entrar no modo de configuração do terminal
+Switch# conf t
+!Adicionar um nome ao Switch
+Switch(config)# hostname SWFeliz
+SWFeliz(config)#
+
+
+...
+
+Switch# conf t
+!Criar e entrar na configuração da VLAN 
+Switch(config)# vlan 2
+!atribuindo nome à vlan
+Switch(config-vlan)#name NOMEdaVLAN
+
+...
+!sair do modo configuração e voltando para o modo administrador 
+Switch(config-vlan)#end   ou Router(config-vlan)# "CTRL+Z" ou Router(config-vlan)# exit
+
+...
+!Mostrar tabela de vlans criadas e as portas de fastEthernet e GigaEthernet ligadas a vlan
+Switch# Show Vlan Brief
+
+...
+!Selecionar uma porta de FastEthernet
+Switch(config)#interface f0/1
+!colocar ela para a vlan 2, possibilitando uma conexao com aparelhos apenas da mesma vlan
+Switch(config-if)#switchport access vlan 2
+                                        
+...
+
+Switch# Show RUN
+!Salvar
+Switch#WR
+
+...
+
+...
+
+
+
+
+...
+...
+...
+..
+.
+..
+.
+.
+.
+
+
+.....
+
+-----
+!Selecionar a porta de FastEthernet, mas dessa vez selecionamos de 1-12, que serão de uma vlan criada
+SW(config)#interface range fast 0/1-12
+!Colocar as portas f0/1-12 na vlan 35
+SW(config-if)#switchport access vlan 35
+
+
+.....
+
+
+SW(config)#interface f0/13-24
+SW(config)#switchport access vlan 36
+
+!Entrar na inteface de configuração da porta de GigaEthernet 
+SW(config)#interface gigabitEthernet 0/1
+!Colocando ela no modo trunk, pertencendo a todas as vlans, possibilitando a comunicação entre aparelhos mesmo sendo em switchs diferentes, mas com as mesma vlans e entradas
+SW(config-if)#switchport mode trunk
+----
