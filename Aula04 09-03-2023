@@ -1,0 +1,79 @@
+Objetivo da atividade de hoje 09/03/2023.
+
+Primeira etapa.: Iniciar o Cisco Packet Tracer
+				 (se autenticar com a sua conta)
+				 
+Segunda etapa..: Material da aula está na Rede
+				 T:\Publica\!!!!RobsonVaamonde\InfraestruturaDeRede
+
+Terceira etapa.: Quem faltou na terceira aula, copiar o meu cenário: 
+				 ComandosCisco\00-Projeto-Cisco.pkt para o seu computador
+
+Quarta etapa...: Se autenticar com a sua Conta no Github
+				 (recomendo para manter o seu material atualizado e organizado)
+				 
+Quinta etapa...: Iniciar o Visual Studio Code
+				 (comandos básicos do Cisco vou mostrar nele)
+				 
+Sexta etapa....: CONTINUAR O MATERIAL InfraestruturaDeRedes-02.PDF
+------------------------------------------------------------------------------------
+AULA 04 de Infraestrutura De Rede
+
+-Rede Sem-Fio
+Tecnologia:
+N: na frequencia de 2.46hz
+AC: na frequencia de 5.0hz
+ambas sao dual-band
+
+tipos de distancia
+indoor: distancia dentro de uma sala com paredes
+outdoor: distancia em um ambiente livre, sem obstaculos
+
+NIC: Placa de rede, suportando 3 velocidades
+-Ethernet (10Mbps)
+-Fast Ethernet (10/100Mbps)
+-Gigabit Ethernet (10/100/1000Mbps)
+
+Placa de rede sem fio que suporte 2.46hz e 5.06hz tendo o módulo bluetooth
+
+ARP: Protocolo de resolução de endereço, que mapea dinamicamente endereço das camadas 3 e 2
+
+Regra da rede do que não podem ser iguais:
+-Hostname
+-IPv4
+-NIC ou MAC Address
+
+DENTRO DO CISCO
+Ligamos um desktop ao switch com o cabo "console"
+DENTRO DO VSCODE: 
+
+!Modo EXEC >
+switch>
+
+!Modo EXEC Privilegiado
+switch> enable
+switch#
+
+!Sair do modo EXEC Privilegiado
+disable
+exit
+
+!TAB - TECLA TAB auto complemento
+en<TAB> enable
+
+!? - TECLA SHIFT ? ajuda
+di?
+
+!Modo de Configuração Global
+configure terminal
+switch(config)#
+==================================
+
+!Configurar o hostname
+hostname sw-l2-2960-1
+
+!Habilitar senhas criptografadas
+service password-encryption
+
+!Salvar as alterações
+copy running-config startup-config 
