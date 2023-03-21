@@ -1,0 +1,99 @@
+Aula 06 de Infraestrutura de Redes
+
+Gateway: roteadores, caso precise sair de uma rede local para ir para outra, caso não precise, utilizar o switch
+roteador serve como uma "porta", levando para outras redes
+
+Modelo de Rede Hierarquica de 3 camadas:
+
+-Camada de Acesso: permite qualquer dispositivo final ter acesso a rede
+-Camada de Distribuição: Usados para determinar as politicas de segurança, decidindo os caminhos das vlans por exemplo
+-Camada de nucleo: Equipamentos que terão acesso a outras redes
+
+Linhas virtuais: permite acessar o switch remotamente (ate 16 linhas), so funciona a partir do momento em que o switch tiver IP
+
+Ao pingar o switch configurado, ira falhar na primeira pois ele não tem uma vlan configurada, forçando-o a fazer um broadcast
+
+colocamos o roteador 1941 e fazer coonexao do tipo direto e selecionar a porta gigabitEthernet 0/0 e depois gigabitEthernet 0/2
+
+codigo utilizado em aula:
+
+!Comentarios no Cisco IOS
+
+!Configuração do Switch Cisco
+
+!Entrar no modo de privilegio
+enable
+    !Data e Hora
+    clock set 20:45:00 14 March 2023
+    !Entrar na Cinfiguração do terminal
+    configure terminal
+        !Nome do host
+        hostname sw-l2-2960-1
+        !ciar uma senha encriptada
+        service password-encryption
+        !Encrementar a data/hora
+        service timestamps log datetime msec
+        !Sem dominio de IP
+        no ip domain-lookup
+        !Aviso a ser mostrado
+        banner motd #AVISO: acesso autorizado somente para funcionarios#
+        !habilitar a senha
+        enable secret 123@senac
+        !Criação de usuarios, privilegios e senhas
+        username senac secret 123@senac
+        username tatuape password 123@senac
+        username admin privilege 15 secret 123@senac
+        !entrar no console 0
+        line console 0  
+            !permitir o login dos usuarios locais
+            login local
+            !Colocando uma senha 
+            password 123@senac
+            !Logs tenham sincronismo
+            logging synchronous
+            !Executar a saido com base em um tempo (5min e 30sec)
+            exec-timeout 5 30
+            !Voltar um nivel
+            exit
+        !habilitando da line 0 a 4 em linha virtual
+        line vty 0 4
+            !Criando um login para a linha virtual
+            login local 
+            !senha
+            password 123@senac
+            !Logs tenham sincronismo
+            logging synchronous
+            !Executar a saido com base em um tempo (5min e 30sec)
+            exec-timeout 5 30
+            !Protocolo de transporte interno permitindo todos os acessos remotos de transporte de todos os switchs
+            transport input all
+            !Descer um nivel
+            exit
+        !Indentificamos o gateway principal
+        ip default-gateway 192.168.1.254
+        !Entrar na interface da vlan 1
+        interface vlan 1
+        !Descrição da interface para administração remota
+            description Interface de SVI
+            !Dando um IP para a interface
+            ip address 192.168.1.250 255.255.255.0
+            !Ligar interface
+            no shutdown
+            !Sair de todas os niveis
+            end
+    !Salvar
+    copy running-config startup-config
+    !confirmação dos comandos
+    show running-config
+    !mostrar o banco de dados da interface
+    show ip interface brief
+    !mostrar banco de dados da vlan
+    show vlan brief
+    !confirmação para ir para o proximo
+    exit
+
+    !Testando o acesso remoto do Desktop
+    telnet 192.168.1.250
+    telnet 192.168.1.251
+    !Usuarios sendo utilizados
+    show users
