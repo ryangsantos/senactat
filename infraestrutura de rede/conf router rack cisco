@@ -1,0 +1,127 @@
+enable  
+clock set ??:??:?? ?? ???????? ????
+    configure terminal
+    hostname rt-g??
+    service password-encryption
+    service timestamps log datetime msec
+    security passwords min-length 8
+    login block-for 120 attempts 4 within 60
+    no ip domain-lookup
+    banner motd #AVISO: acesso autorizado somente a funcionarios#
+    enable secret 123@senac
+    username ryan privilege 15 secret 123@senac
+	username luiz privilege 15 secret 123@senac
+	username rafael privilege 15 secret 123@senac
+	username weslley privilege 15 secret 123@senac
+    line console 0
+      password 123@senac  
+    login local
+    logging synchronous
+    exec-timeout 5 30
+    end
+configure terminal
+    interface gigabitEthernet 0/0 
+    no shutdown
+    exit
+   interface gigabitEthernet 0/0.??
+        description Subinterface da VLAN de SVI do Switch Layer 3 3560
+		encapsulation dot1Q ??
+		ip address 172.16.??.254 255.255.255.0
+		exit
+    interface gigabitEthernet 0/0.??
+		description Subinterface da VLAN do Primeiro Usuário
+		encapsulation dot1Q ??
+		ip address 172.16.??.254 255.255.255.0
+		exit    
+    interface gigabitEthernet 0/0.??
+		description Subinterface da VLAN do Segundo Usuário
+		encapsulation dot1Q ??
+		ip address 172.16.??.254 255.255.255.0
+		exit 
+    interface gigabitEthernet 0/0.??
+		description Subinterface da VLAN do Terceiro Usuário
+		encapsulation dot1Q ??
+		ip address 172.16.??.254 255.255.255.0
+		exit 
+    interface gigabitEthernet 0/0.??
+		description Subinterface da VLAN do Quarto Usuário
+		encapsulation dot1Q ??
+		ip address 172.16.??.254 255.255.255.0
+		exit                     
+    interface gigabitEthernet 0/0.??
+		description Subinterface da VLAN Wireless
+		encapsulation dot1Q ??
+		ip address 172.16.??.254 255.255.255.0
+		end  
+configure terminal
+   !Configurando o Pool do DHCP Server da VLAN do Primeiro Usuário
+	!OBSERVAÇÃO IMPORTANTE: veja o arquivo 00-DocumentacaoDaRede.txt
+	ip dhcp excluded-address 172.16.??.1 172.16.??.100
+	ip dhcp excluded-address 172.16.??.200 172.16.??.254
+	ip dhcp pool vlan-??
+		network 172.16.??.0 255.255.255.0
+		default-router 172.16.??.254
+		dns-server 8.8.8.8 8.8.4.4
+		domain-name senac.br
+		exit
+
+    !Configurando o Pool do DHCP Server da VLAN do Segundo Usuário	
+	ip dhcp excluded-address 172.16.??.1 172.16.??.100
+	ip dhcp excluded-address 172.16.??.200 172.16.??.254
+	ip dhcp pool vlan-??
+	    network 172.16.??.0 255.255.255.0
+	    default-router 172.16.??.254
+	    dns-server 8.8.8.8 8.8.4.4
+	    domain-name senac.br
+	    exit
+
+	!Configurando o Pool do DHCP Server da VLAN do Terceiro Usuário	
+	ip dhcp excluded-address 172.16.??.1 172.16.??.100
+	ip dhcp excluded-address 172.16.??.200 172.16.??.254
+	ip dhcp pool vlan-??
+		network 172.16.??.0 255.255.255.0
+		default-router 172.16.??.254
+		dns-server 8.8.8.8 8.8.4.4
+		domain-name senac.br
+		exit
+
+	!Configurando o Pool do DHCP Server da VLAN do Quarto Usuário	
+	ip dhcp excluded-address 172.16.??.1 172.16.??.100
+	ip dhcp excluded-address 172.16.??.200 172.16.??.254
+	ip dhcp pool vlan-??
+		network 172.16.??.0 255.255.255.0
+		default-router 172.16.??.254
+		dns-server 8.8.8.8 8.8.4.4
+		domain-name senac.br
+		exit
+
+	!Configurando o Pool do DHCP Server da VLAN Wireless
+	ip dhcp excluded-address 172.16.??.1 172.16.??.100
+	ip dhcp excluded-address 172.16.??.200 172.16.??.254
+	ip dhcp pool vlan-??
+		network 172.16.??.0 255.255.255.0
+		default-router 172.16.??.254
+		dns-server 8.8.8.8 8.8.4.4
+		domain-name senac.br
+		end
+configure terminal
+    interface serial 0/0/0
+        description Interface Grupo-?? para Grupo-??
+        ip address 192.168.1.??? 255.255.255.252
+        clock rate 64000
+        bandwidth 64
+        no shutdown
+        exit
+    interface serial 0/0/1
+        description Interface Grupo-?? para Grupo-??
+        ip address 192.168.1.??? 255.255.255.252
+        clock rate 64000
+        bandwidth 64
+        no shutdown
+        end
+configure terminal
+    interface gigabitEthernet 0/1
+        description Interface de acesso a Internet do Grupo-??
+        ip address dhcp
+        no shutdown
+        end
