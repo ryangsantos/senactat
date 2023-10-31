@@ -5,7 +5,7 @@ Aulas do curso Técnico em Informática do SENAC Tatuapé
 introdução em sistemas oreracionais
 -Linux
 -Windows
-<img src="[https://www.google.com/url?sa=i&url=https%3A%2F%2Folhardigital.com.br%2F2018%2F08%2F31%2Fdicas-e-tutoriais%2Fprogramas-do-windows-que-tambem-rodam-no-linux%2F&psig=AOvVaw1fopZKZ2e36Z0EoTMvx_OB&ust=1698879772369000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMDvv7GyoYIDFQAAAAAdAAAAABAR](https://olhardigital.com.br/wp-content/uploads/2018/08/20180831173019.jpg)https://olhardigital.com.br/wp-content/uploads/2018/08/20180831173019.jpg">
+<img src="https://miro.medium.com/v2/resize:fit:1400/0*BZvjTftSqXfcD73q">
 ## Autor
 Ryan gomes dos santos
 
