@@ -8,7 +8,7 @@ Linux X Windows
 
 <img src="https://miro.medium.com/v2/resize:fit:1400/0*BZvjTftSqXfcD73q">
 
-##Autor
+# Autor
 Ryan gomes dos santos
 
 
